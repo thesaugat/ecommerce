@@ -2,14 +2,12 @@ package com.thesaugat.ecommerce.splash;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 
-import com.thesaugat.ecommerce.MainActivity;
 import com.thesaugat.ecommerce.R;
+import com.thesaugat.ecommerce.home.MainActivity;
 import com.thesaugat.ecommerce.userAccount.UserAccountActivity;
 import com.thesaugat.ecommerce.utils.SharedPrefUtils;
 

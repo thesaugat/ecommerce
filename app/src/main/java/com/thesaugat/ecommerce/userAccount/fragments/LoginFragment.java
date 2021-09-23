@@ -1,9 +1,7 @@
 
 package com.thesaugat.ecommerce.userAccount.fragments;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -17,7 +15,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.thesaugat.ecommerce.MainActivity;
+import com.thesaugat.ecommerce.home.MainActivity;
 import com.thesaugat.ecommerce.R;
 import com.thesaugat.ecommerce.utils.SharedPrefUtils;
 

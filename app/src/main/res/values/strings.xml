@@ -9,5 +9,9 @@
 
 
     <!--    these are the key for sharedPref-->
-    <string name="isLogged" translatable="false">isLogged</string>
+    <string name="isLogged" translatable="false">isl</string>
+    <string name="home">Home</string>
+    <string name="cart">Cart</string>
+    <string name="wishlist">Wishlist</string>
+    <string name="profile">Profile</string>
 </resources>
