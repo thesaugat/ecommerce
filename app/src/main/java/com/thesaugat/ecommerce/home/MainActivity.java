@@ -68,9 +68,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     void changeFragment(Fragment fragment) {
+        getSupportFragmentManager().beginTransaction().hide(currentFragment).commit();
 
         if (fragment.isAdded()) {
-            getSupportFragmentManager().beginTransaction().hide(currentFragment).commit();
+
             getSupportFragmentManager().beginTransaction().show(fragment).commit();
 
         } else {
