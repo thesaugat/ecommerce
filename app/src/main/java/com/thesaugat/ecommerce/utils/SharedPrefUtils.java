@@ -11,8 +11,10 @@ public class SharedPrefUtils {
     public static boolean getBool(Activity context, String key, boolean defaultV) {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
         return sharedPref.getBoolean(key, defaultV);
-
-
+    }
+    public static String getString(Activity context, String key) {
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
+        return sharedPref.getString(key, "");
     }
 
 
@@ -20,6 +22,13 @@ public class SharedPrefUtils {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(activity);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putBoolean(key, val);
+        editor.apply();
+    }
+
+    public static void setString(Activity activity, String key, String val) {
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(activity);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString(key, val);
         editor.apply();
     }
 }

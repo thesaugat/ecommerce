@@ -9,7 +9,11 @@
 
 
     <!--    these are the key for sharedPref-->
-    <string name="isLogged" translatable="false">isl</string>
+    <string name="isLogged" translatable="false">isll</string>
+    <string name="api_key" translatable="false">apk</string>
+    <string name="email_key" translatable="false">ek</string>
+    <string name="name_key" translatable="false">nk</string>
+    <string name="created_key" translatable="false">ck</string>
     <string name="home">Home</string>
     <string name="cart">Cart</string>
     <string name="wishlist">Wishlist</string>
