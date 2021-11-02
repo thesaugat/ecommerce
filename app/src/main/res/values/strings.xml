@@ -9,7 +9,7 @@
 
 
     <!--    these are the key for sharedPref-->
-    <string name="isLogged" translatable="false">isll</string>
+    <string name="isLogged" translatable="false">issl</string>
     <string name="api_key" translatable="false">apk</string>
     <string name="email_key" translatable="false">ek</string>
     <string name="name_key" translatable="false">nk</string>
