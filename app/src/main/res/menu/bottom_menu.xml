@@ -6,6 +6,10 @@
         android:title="@string/home" />
 
     <item
+        android:id="@+id/category"
+        android:icon="@drawable/ic_baseline_grid_on_24"
+        android:title="@string/categories" />
+    <item
         android:id="@+id/cart"
         android:icon="@drawable/ic_bag"
         android:title="@string/cart" />

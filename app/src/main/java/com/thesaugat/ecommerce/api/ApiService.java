@@ -1,8 +1,10 @@
 package com.thesaugat.ecommerce.api;
 
 import com.thesaugat.ecommerce.api.responses.AllProductResponse;
+import com.thesaugat.ecommerce.api.responses.CategoryResponse;
 import com.thesaugat.ecommerce.api.responses.LoginResponse;
 import com.thesaugat.ecommerce.api.responses.RegisterResponse;
+import com.thesaugat.ecommerce.api.responses.SliderResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
@@ -23,4 +25,11 @@ public interface ApiService {
 
     @GET("/api/v1/get-all-products")
     Call<AllProductResponse> getAllProducts();
+
+
+    @GET("/api/v1/get-categories")
+    Call<CategoryResponse> getAllCategories();
+
+    @GET("/api/v1/slider")
+    Call<SliderResponse> getSliders();
 }

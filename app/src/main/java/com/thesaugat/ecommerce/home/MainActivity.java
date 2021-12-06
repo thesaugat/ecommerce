@@ -4,13 +4,17 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.thesaugat.ecommerce.R;
 import com.thesaugat.ecommerce.home.fragmets.CartFragment;
+import com.thesaugat.ecommerce.home.fragmets.CategoryFragment;
 import com.thesaugat.ecommerce.home.fragmets.home.HomeFragment;
 import com.thesaugat.ecommerce.home.fragmets.ProfileFragmnet;
 import com.thesaugat.ecommerce.home.fragmets.WishListFragment;
@@ -21,10 +25,13 @@ public class MainActivity extends AppCompatActivity {
     CartFragment cartFragment;
     WishListFragment wishListFragment;
     ProfileFragmnet profileFragmnet;
+    CategoryFragment categoryFragment;
     Fragment currentFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR);
+        getWindow().setStatusBarColor(Color.WHITE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         bottomNavigationView = findViewById(R.id.mainBottomNav);
@@ -41,7 +48,14 @@ public class MainActivity extends AppCompatActivity {
                         homeFragment = new HomeFragment();
                     changeFragment(homeFragment);
                     return true;
-                } else if (item.getTitle().equals(getString(R.string.cart))) {
+                } else if (item.getTitle().equals(getString(R.string.categories))) {
+
+                    if (categoryFragment == null)
+                        categoryFragment = new CategoryFragment();
+                    changeFragment(categoryFragment);
+                    return true;
+
+                }else if (item.getTitle().equals(getString(R.string.cart))) {
 
                     if (cartFragment == null)
                         cartFragment = new CartFragment();
@@ -67,6 +81,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public  void  onSearchClicked(View v){
+        Toast.makeText(this, "Search Clicked", Toast.LENGTH_SHORT).show();
+    }
     void changeFragment(Fragment fragment) {
         getSupportFragmentManager().beginTransaction().hide(currentFragment).commit();
 

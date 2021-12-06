@@ -3,19 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/box_shape.xml" value="0.41333333333333333" />
+        <entry key="app/src/main/res/drawable/ic_bag.xml" value="0.41333333333333333" />
+        <entry key="app/src/main/res/drawable/ic_baseline_grid_on_24.xml" value="0.41333333333333333" />
         <entry key="app/src/main/res/drawable/ic_google.xml" value="0.41333333333333333" />
         <entry key="app/src/main/res/drawable/ic_home.xml" value="0.2942708333333333" />
         <entry key="app/src/main/res/drawable/rectange_box.xml" value="0.41333333333333333" />
+        <entry key="app/src/main/res/drawable/search_shape.xml" value="0.41333333333333333" />
         <entry key="app/src/main/res/drawable/strike.xml" value="0.24635416666666668" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.38958333333333334" />
         <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/activity_user_account.xml" value="0.3880208333333333" />
         <entry key="app/src/main/res/layout/fragment_cart.xml" value="0.38958333333333334" />
+        <entry key="app/src/main/res/layout/fragment_category.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.21302083333333333" />
         <entry key="app/src/main/res/layout/fragment_login.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/fragment_profile_fragmnet.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/fragment_register.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/fragment_wish_list.xml" value="0.4036458333333333" />
+        <entry key="app/src/main/res/layout/item_category.xml" value="1.1" />
+        <entry key="app/src/main/res/layout/item_image_slider.xml" value="0.4036458333333333" />
         <entry key="app/src/main/res/layout/item_product.xml" value="0.26666666666666666" />
         <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.23072916666666668" />
       </map>
