@@ -6,16 +6,18 @@
     android:orientation="vertical">
 
     <ImageView
+        android:scaleType="centerInside"
         android:id="@+id/iv_auto_image_slider"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitXY" />
+        />
 
 
     <ImageView
         android:id="@+id/iv_gif_container"
         android:layout_width="80dp"
         android:layout_height="80dp"
+
         android:layout_gravity="bottom|start"
         android:layout_margin="50dp" />
 

@@ -23,13 +23,16 @@ public class SliderAdapter extends
     LayoutInflater layoutInflater;
     Context context;
     OnSliderClickLister sliderClickLister;
+    boolean isFitted =true;
 
 
-    public SliderAdapter(List<Slider> sliders, Context context) {
+    public SliderAdapter(List<Slider> sliders, Context context, Boolean isFitted) {
         this.sliders = sliders;
         this.context = context;
         layoutInflater = LayoutInflater.from(context);
+        this.isFitted = isFitted;
     }
+
 
     @Override
     public SliderViewHolder onCreateViewHolder(ViewGroup parent) {
@@ -50,6 +53,12 @@ public class SliderAdapter extends
 //        viewHolder.textViewDescription.setTextSize(16);
 //        viewHolder.textViewDescription.setTextColor(Color.WHITE);
         Picasso.get().load(sliders.get(position).getImage()).into(viewHolder.imageViewBackground);
+        if(isFitted)
+        {
+            viewHolder.imageViewBackground.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        }
+
+
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

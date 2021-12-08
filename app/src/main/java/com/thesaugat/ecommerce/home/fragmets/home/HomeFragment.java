@@ -87,7 +87,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void loadSliders(List<Slider> sliders) {
-        SliderAdapter adapter = new SliderAdapter(sliders, getContext());
+        SliderAdapter adapter = new SliderAdapter(sliders, getContext(), true);
         adapter.setSliderClickLister(new SliderAdapter.OnSliderClickLister() {
             @Override
             public void onItemClick(int position, Slider slider) {
