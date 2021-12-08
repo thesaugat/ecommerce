@@ -12,9 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ecommerce">
         <activity
-            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
-            android:name=".singleProductScreen.SingleProductActivity"
+            android:name=".categoryPage.CategoryActivity"
             android:exported="false" />
+        <activity
+            android:name=".singleProductScreen.SingleProductActivity"
+            android:exported="false"
+            android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
         <activity
             android:name=".userAccount.UserAccountActivity"
             android:exported="true"

@@ -1,5 +1,6 @@
 package com.thesaugat.ecommerce.home.fragmets.home;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -27,9 +28,11 @@ import com.thesaugat.ecommerce.api.responses.CategoryResponse;
 import com.thesaugat.ecommerce.api.responses.Product;
 import com.thesaugat.ecommerce.api.responses.Slider;
 import com.thesaugat.ecommerce.api.responses.SliderResponse;
+import com.thesaugat.ecommerce.categoryPage.CategoryActivity;
 import com.thesaugat.ecommerce.home.fragmets.home.adapters.CategoryAdapter;
 import com.thesaugat.ecommerce.home.fragmets.home.adapters.ShopAdapter;
 import com.thesaugat.ecommerce.home.fragmets.home.adapters.SliderAdapter;
+import com.thesaugat.ecommerce.singleProductScreen.SingleProductActivity;
 import com.thesaugat.ecommerce.utils.DataHolder;
 
 import java.util.ArrayList;
@@ -93,12 +96,19 @@ public class HomeFragment extends Fragment {
             public void onItemClick(int position, Slider slider) {
 
                 if (slider.getType() == 1) {
-                    Toast.makeText(getContext(), "Open Product with product Id  " + slider.getRelatedId() + position, Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getContext(), SingleProductActivity.class);
+
+                    intent.putExtra(SingleProductActivity.SINGLE_DATA_KEY, slider.getRelatedId());
+                    getContext().startActivity(intent);
+                } else if (slider.getType() == 2) {
+                    Intent cat = new Intent(getContext(), CategoryActivity.class);
+                    Category category = new Category();
+                    category.setId(slider.getRelatedId());
+                    category.setName(slider.getDesc());
+                    cat.putExtra(CategoryActivity.CAT_KEY, category);
+                    getContext().startActivity(cat);
                 }
 
-               else if (slider.getType() == 2) {
-                    Toast.makeText(getContext(), "Open Category Products with category Id  " + slider.getRelatedId() + position, Toast.LENGTH_SHORT).show();
-                }
             }
         });
 
