@@ -23,31 +23,36 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
     List<Product> productDataList;
     LayoutInflater layoutInflater;
     Context context;
+    Boolean isCart;
 
 
-   public ShopAdapter(List<Product> productDataList, Context context) {
+    public ShopAdapter(List<Product> productDataList, Context context, Boolean isCart) {
         this.productDataList = productDataList;
         layoutInflater = LayoutInflater.from(context);
         this.context = context;
+        this.isCart = isCart;
     }
 
 
     @NonNull
     @Override
     public ShopViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new ShopViewHolder(layoutInflater.inflate(R.layout.item_product, parent, false));
+        if (isCart)
+            return new ShopViewHolder(layoutInflater.inflate(R.layout.item_cart, parent, false));
+
+        else
+            return new ShopViewHolder(layoutInflater.inflate(R.layout.item_product, parent, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull ShopViewHolder holder, int position) {
         holder.nameTV.setText(productDataList.get(position).getName());
-        if(productDataList.get(position).getDiscountPrice() == null || productDataList.get(position).getDiscountPrice()== 0){
+        if (productDataList.get(position).getDiscountPrice() == null || productDataList.get(position).getDiscountPrice() == 0) {
             holder.priceTv.setVisibility(View.GONE);
-            holder.discountPrice.setText(productDataList.get(position).getPrice()+"");
-        }
-        else
-            holder.discountPrice.setText(productDataList.get(position).getDiscountPrice()+"");
-        holder.priceTv.setText(productDataList.get(position).getPrice()+"");
+            holder.discountPrice.setText(productDataList.get(position).getPrice() + "");
+        } else
+            holder.discountPrice.setText(productDataList.get(position).getDiscountPrice() + "");
+        holder.priceTv.setText(productDataList.get(position).getPrice() + "");
 
         Picasso.get().load(productDataList.get(position).getImages().get(0)).into(holder.productIV);
         holder.singleProductLL.setOnClickListener(new View.OnClickListener() {

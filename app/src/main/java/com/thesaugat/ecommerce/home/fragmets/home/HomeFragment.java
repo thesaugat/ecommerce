@@ -192,7 +192,7 @@ public class HomeFragment extends Fragment {
 
         allProductsRV.setHasFixedSize(true);
         allProductsRV.setLayoutManager(new GridLayoutManager(getActivity(), 2));
-        ShopAdapter shopAdapter = new ShopAdapter(products, getContext());
+        ShopAdapter shopAdapter = new ShopAdapter(products, getContext(), false);
         allProductsRV.setAdapter(shopAdapter);
 
     }
