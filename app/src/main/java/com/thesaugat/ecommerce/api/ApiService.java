@@ -1,5 +1,6 @@
 package com.thesaugat.ecommerce.api;
 
+import com.thesaugat.ecommerce.api.responses.AddressResponse;
 import com.thesaugat.ecommerce.api.responses.AllProductResponse;
 import com.thesaugat.ecommerce.api.responses.CategoryResponse;
 import com.thesaugat.ecommerce.api.responses.LoginResponse;
@@ -8,6 +9,7 @@ import com.thesaugat.ecommerce.api.responses.SingleProductResponse;
 import com.thesaugat.ecommerce.api.responses.SliderResponse;
 
 import retrofit2.Call;
+import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -32,6 +34,9 @@ public interface ApiService {
     @GET("/api/v1/cart")
     Call<AllProductResponse> getMyCartItems(@Header("Apikey") String apikey);
 
+    @DELETE("/api/v1/cart")
+    Call<RegisterResponse> removeFromCart(@Header("Apikey") String apikey,@Query("c_id") int c_id );
+
 
     @GET("/api/v1/get-all-products")
     Call<AllProductResponse> getAllProducts();
@@ -48,6 +53,9 @@ public interface ApiService {
 
     @GET("/api/v1/get-all-products")
     Call<SingleProductResponse> getProductById(@Query("id") int c_id);
+
+    @GET("/api/v1/address")
+    Call<AddressResponse> getMyAddresses(@Header("Apikey") String apikey);
 
 
 }

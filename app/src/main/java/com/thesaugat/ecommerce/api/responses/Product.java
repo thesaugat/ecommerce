@@ -32,9 +32,12 @@ public class Product implements Serializable {
     @SerializedName("categories")
     @Expose
     private List<Integer> categories = null;
-    @SerializedName("quanity")
+    @SerializedName("cart_quantity")
     @Expose
     private Integer quanity;
+    @SerializedName("cart_id")
+    @Expose
+    private Integer cart_id;
 
     public Integer getId() {
         return id;
@@ -108,4 +111,11 @@ public class Product implements Serializable {
         this.quanity = quanity;
     }
 
+    public Integer getCart_id() {
+        return cart_id;
+    }
+
+    public void setCart_id(Integer cart_id) {
+        this.cart_id = cart_id;
+    }
 }

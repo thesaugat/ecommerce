@@ -12,6 +12,7 @@
   >
 
     <ImageView
+
         android:id="@+id/productIV"
         android:src="@drawable/ic_google"
         android:layout_width="90dp"
@@ -43,7 +44,9 @@
                 />
 
             <ImageView
+                android:rotation="45"
                 android:layout_width="24dp"
+                android:id="@+id/deleteCart"
                 android:layout_height="24dp"
                 android:background="@drawable/rectange_box"
                 android:src="@drawable/ic_baseline_add_24"

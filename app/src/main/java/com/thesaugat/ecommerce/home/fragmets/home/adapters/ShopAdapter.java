@@ -24,6 +24,8 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
     LayoutInflater layoutInflater;
     Context context;
     Boolean isCart;
+    Boolean removeEnabled = true;
+    OnRemoveClicked removeClicked;
 
 
     public ShopAdapter(List<Product> productDataList, Context context, Boolean isCart) {
@@ -33,6 +35,13 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
         this.isCart = isCart;
     }
 
+    public void setRemoveClicked(OnRemoveClicked removeClicked) {
+        this.removeClicked = removeClicked;
+    }
+
+    public void setRemoveEnabled(Boolean removeEnabled) {
+        this.removeEnabled = removeEnabled;
+    }
 
     @NonNull
     @Override
@@ -64,6 +73,17 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
 
             }
         });
+        if (isCart)
+            if(removeEnabled)
+            holder.deleteCart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    removeClicked.onRemove(holder.getAdapterPosition());
+                }
+            });
+            else
+                holder.deleteCart.setVisibility(View.GONE);
 
     }
 
@@ -76,6 +96,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
         ImageView productIV;
         LinearLayout singleProductLL;
         TextView nameTV, priceTv, discountPrice, discountPercent;
+        ImageView deleteCart;
 
         public ShopViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -84,6 +105,12 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ShopViewHolder
             singleProductLL = itemView.findViewById(R.id.singleProductLL);
             priceTv = itemView.findViewById(R.id.oldPriceTV);
             discountPrice = itemView.findViewById(R.id.discountPriceTV);
+            if (isCart)
+                deleteCart = itemView.findViewById(R.id.deleteCart);
         }
+    }
+
+  public   interface OnRemoveClicked {
+        public void onRemove(int position);
     }
 }

@@ -180,11 +180,11 @@
 
 
     <LinearLayout
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="bottom"
         android:id="@+id/addToCartLL"
         android:layout_width="match_parent"
         android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
 
         android:layout_marginStart="@dimen/normal_spacing"
         android:layout_marginTop="@dimen/normal_spacing"
@@ -209,12 +209,13 @@
             android:textColor="@color/white"
             android:textSize="18sp"
             android:textStyle="bold" />
+
         <ProgressBar
             android:id="@+id/addTOCartProgress"
-            android:visibility="gone"
-           android:padding="@dimen/normal_spacing"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:padding="@dimen/normal_spacing"
+            android:visibility="gone" />
 
     </LinearLayout>
 

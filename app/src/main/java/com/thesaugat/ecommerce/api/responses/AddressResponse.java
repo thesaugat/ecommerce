@@ -3,14 +3,13 @@ package com.thesaugat.ecommerce.api.responses;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.io.Serializable;
 import java.util.List;
 
-public class AllProductResponse implements Serializable {
+public class AddressResponse {
 
-@SerializedName("products")
+@SerializedName("adresses")
 @Expose
-private List<Product> products = null;
+private List<Adress> adresses = null;
 @SerializedName("error")
 @Expose
 private Boolean error;
@@ -18,12 +17,12 @@ private Boolean error;
 @Expose
 private String message;
 
-public List<Product> getProducts() {
-return products;
+public List<Adress> getAdresses() {
+return adresses;
 }
 
-public void setProducts(List<Product> products) {
-this.products = products;
+public void setAdresses(List<Adress> adresses) {
+this.adresses = adresses;
 }
 
 public Boolean getError() {
@@ -41,5 +40,4 @@ return message;
 public void setMessage(String message) {
 this.message = message;
 }
-
 }
